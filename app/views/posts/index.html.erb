@@ -1,0 +1,23 @@
+<nav class="navbar navbar-light bg-dark">
+  <a class="navbar-brand text-light">Searchbar</a>
+  <form class="form-inline">
+    <input class="form-control mr-sm-2" type="search" name="title" placeholder="Ingrese el titulo del post" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+</nav>
+
+<h1 class="display-3 text-center">Posts</h1>
+
+<div class="container">
+  <% (@posts.reverse).each do |post| %>
+    <article class="col-12">
+      <h3 class="display-5 text-left text-uppercase font-weight-bold"><%= post.title %></h3>
+      <p class="text-left font-italic"><%= post.created_at %></p>
+      <ul class="list-unstyled list-group list-group-horizontal ">
+        <li class="list-group-item border-0"><img src="<%= post.image_url %>" class="img-fluid" alt="image_url" ></li>
+        <li class="list-group-item border-0"><p class="text-justify"><%= post.content %></p></li>
+      </ul>
+      <br>
+    </article>
+  <% end %>
+</div>

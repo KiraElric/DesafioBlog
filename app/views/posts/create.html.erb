@@ -1,0 +1,22 @@
+<div>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@post.errors.count, "error") %>
+        Prohibited this post from being saved:
+      </h2>
+
+      <ul>
+        <% @post.errors.full_messages.each do |message| %>
+          <li><% message %></li>
+        <% end %>
+      </ul>
+    </div>
+
+  <% else %>
+    <div>
+      <h2>Tu post se guardo correctamente</h2>
+    </div>
+
+  <% end %>
+</div>
